@@ -11,6 +11,9 @@ This is also a workflow skillet included to run them in sequence.  Waiting a bug
 - Type of Skillet:  XML and REST
 - Purpose:  Config
 
+For more information on Panhandler and Skillets please refer to the documention.
+- https://panhandler.readthedocs.io
+
 ## Variables AppID
 
   - name: appid_name
