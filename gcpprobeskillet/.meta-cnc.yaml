@@ -3,7 +3,7 @@
 # unique snippet name
 name: GcpHttpLbAppID
 # label used for menu selection
-label: appid
+label: appid - GCP HTTP LB
 description: Skillet to create the Palo Alto Networks App-ID for the GCP HTTP Load Balancer Health Probe
 
 # type of device configuration

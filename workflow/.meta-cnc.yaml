@@ -1,6 +1,6 @@
 name: workflow_appid_move_commit
 # label used for menu selection
-label: workflow
+label: workflow - GCP App-ID
 
 description: create appid, allow rule, move and commit
 
