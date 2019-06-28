@@ -17,6 +17,7 @@ extends:
 labels:
   collection:
     - appid
+    - GCP
 
 # ---------------------------------------------------------------------
 # end of preamble section
