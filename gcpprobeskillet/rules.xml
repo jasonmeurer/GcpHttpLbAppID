@@ -6,8 +6,8 @@
           <member>any</member>
         </from>
         <source>
-          <member>{{ address_name1 }}</member>
-          <member>{{ address_name2 }}</member>
+          <member>GCP SNAT Subnet1</member>
+          <member>GCP SNAT Subnet2</member>
         </source>
         <destination>
           <member>any</member>
