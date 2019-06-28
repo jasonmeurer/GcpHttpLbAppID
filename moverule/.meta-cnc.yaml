@@ -1,5 +1,5 @@
 name: move_rule_rest
-label: Move security rule - GCP AppID
+label: Move security rule - GCP App-ID
 
 description: |
   This skillet moves a rule and then perform
