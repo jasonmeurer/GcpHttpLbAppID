@@ -1,0 +1,83 @@
+name: workflow_appid_move_commit
+# label used for menu selection
+label: workflow
+
+description: create appid, allow rule, move and commit
+
+# type of skillet (panos or panorama or template or terraform)
+type: workflow
+
+# more complex skillets may express a dependency on another skillet that should be loaded before this one.
+# For example, a set of skillets may build off of a single 'golden config' that contains shared configuration
+# As this skillet is very simple, there is no need to build on another one.
+extends:
+
+# Labels allow grouping and type specific options and are generally only used in advanced cases
+labels:
+  collection:
+    - appid
+
+# variables define the things an operator may customize in this skillet. Things like DNS servers, NTP addresses, etc
+# may be customized for each deployment. Each variable will be rendered as a form field in the panhandler application
+
+variables:
+  - name: appid_name
+    description: appid name (32 total char limit)
+    default: appidname
+    type_hint: text
+  - name: appid_description
+    description: appid_description
+    default: appid_description
+    type_hint: text
+  - name: rule_name
+    description: security_rule_name
+    default: security_rule_name
+    type_hint: text
+  - name: rule_description
+    description: security_rule_description
+    default: security_rule_description
+    type_hint: text 
+  - name: TARGET_IP
+    description: Host
+    default: 127.0.0.1
+    type_hint: ip_address
+  - name: TARGET_USERNAME
+    description: Username
+    default: admin
+    type_hint: text
+  - name: TARGET_PASSWORD
+    description: Password
+    default: admin
+    type_hint: password
+  - name: rule_name
+    description: name of security rule to move
+    default: rule1
+    type_hint: text
+  - name: ref_rule
+    description: rule to move before or after
+    default: rule2
+    type_hint: text
+  - name: where
+    description: move before or after other rule
+    default: top
+    type_hint: dropdown
+    dd_list:
+      - key: after
+        value: after
+      - key: before
+        value: before
+      - key: top
+        value: top
+      - key: bottom
+        value: bottom
+
+
+# Snippets is an ordered list of configuration xml fragments that will be pushed to the PAN-OS NGFW. The xpath
+# determines where in the configuration hierarchy the xml fragment will be set. 'file' indicates the name of the file
+# to load and parse. Jinja2 style variables will be variable interpolated using the values of the 'variables' defined
+# in the 'variables' section.
+snippets:
+  - name: GcpHttpLbAppID
+  - name: move_rule_rest
+
+

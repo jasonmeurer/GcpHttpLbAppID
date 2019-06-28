@@ -1,0 +1,8 @@
+      <entry name="GCP SNAT Subnet1">
+        <ip-netmask>130.211.0.0/22</ip-netmask>
+        <description>GCP Source NAT Subnet 1</description>
+      </entry>
+      <entry name="GCP SNAT Subnet2">
+        <ip-netmask>35.191.0.0/16</ip-netmask>
+        <description>GCP Source NAT Subnet 2</description>
+      </entry>      

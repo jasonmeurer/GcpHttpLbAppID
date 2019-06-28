@@ -1,0 +1,38 @@
+      <entry name="{{ appid_name }}">
+        <default>
+          <port>
+            <member>tcp/80</member>
+            <member>tcp/443</member>
+          </port>
+        </default>
+        <signature>
+          <entry name="gcpprobesignature">
+            <and-condition>
+              <entry name="And Condition 1">
+                <or-condition>
+                  <entry name="Or Condition 1">
+                    <operator>
+                      <pattern-match>
+                        <qualifier>
+                          <entry name="http-method">
+                            <value>GET</value>
+                          </entry>
+                        </qualifier>
+                        <pattern>GoogleHC/</pattern>
+                        <context>http-req-headers</context>
+                      </pattern-match>
+                    </operator>
+                  </entry>
+                </or-condition>
+              </entry>
+            </and-condition>
+            <scope>protocol-data-unit</scope>
+            <order-free>no</order-free>
+          </entry>
+        </signature>
+        <subcategory>ip-protocol</subcategory>
+        <category>networking</category>
+        <technology>client-server</technology>
+        <description>{{ appid_description }}</description>
+        <risk>1</risk>
+      </entry>
