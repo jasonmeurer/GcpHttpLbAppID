@@ -1,7 +1,7 @@
 # GcpHttpLbAppID
 
 This repo contains 2 skillets.
-1. GcpHttpLbAppID skillet to create the Palo Alto Networks App-ID for the AWS HTTP Load Balancer Health Probe.
+1. GcpHttpLbAppID skillet to create the Palo Alto Networks App-ID for the GCP HTTP Load Balancer Health Probe.
 2. move_rule_rest skillet to move the rule to its properly location above the actual application rule and commit.
 
 This is also a workflow skillet included to run them in sequence.  Waiting a bug in panhandler to be fixed which is preventing the execution of the second skillet.
@@ -21,18 +21,6 @@ This is also a workflow skillet included to run them in sequence.  Waiting a bug
     - description: appid_description
     - default: appid_description
     - type_hint: text
-  - name: address_name
-    - description: appgw_source_address_subnet
-    - default: appgw_source_address_subnet_name
-    - type_hint: text
-  - name: address_cidr
-    - description: appgw_source_address_subnet
-    - default: 10.0.0.0/24
-    - type_hint: text    
-  - name: address_description
-    - description: appgw_source_address_description
-    - default: appgw_source_address_description
-    - type_hint: text      
   - name: rule_name
     - description: security_rule_name
     - default: security_rule_name
